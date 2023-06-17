@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subjects</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_subjects.css' %}">
+    <script src="{% static 'js/script_subjects.js' %}"></script>
+</head>
+<body>
+    <h1>Subjects for Trimestre</h1>
+
+    <ul class="classes">
+        {% for trimestre in trimestres %}
+        <li>
+            <a href="{% url 'a3ded:subjects' class_id=school_class.pk trimestre_id=trimestre.pk %}">{{ trimestre.name }}</a>
+        </li>
+        {% empty %}
+        <li>No trimesters available for this class.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'a3ded:home' %}">Back to Home</a>
+</body>
+</html>

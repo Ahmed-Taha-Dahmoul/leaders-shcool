@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Classes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_classes.css' %}">
+    <script src="{% static 'js/script_classes.js' %}"></script>
+</head>
+<body>
+    <h1>Classes</h1>
+    <ul class="classes">
+        {% for school_class in classes %}
+        <li>
+            <a href="{% url 'a3ded:trimestre' class_id=school_class.pk %}">{{ school_class.name }}</a>
+        </li>
+        {% empty %}
+        <li>
+            <p>No classes available.</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

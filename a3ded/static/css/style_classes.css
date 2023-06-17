@@ -1,0 +1,58 @@
+/* Styles for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px; /* Increase the font size of the title */
+}
+
+ul.classes {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers items horizontally */
+    width: 300px; /* Set a fixed width for the ul */
+    margin: 0 auto; /* Centers the ul horizontally */
+    transition: width 0.3s ease; /* Add transition effect for the width change */
+}
+
+ul.classes:hover {
+    width: 350px; /* Increase the width on hover */
+}
+
+ul.classes li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+ul.classes li.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+ul.classes li a {
+    display: block;
+    padding: 15px 30px; /* Increase the padding for bigger buttons */
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 8px; /* Increase the border-radius for rounder buttons */
+    text-decoration: none;
+    font-size: 20px; /* Increase the font size for the buttons */
+    font-weight: bold;
+    margin-bottom: 20px; /* Increase the margin for more spacing between buttons */
+    transition: background-color 0.3s ease;
+    text-align: center; /* Centers text within each link */
+}
+
+ul.classes li a:hover {
+    background-color: #2980b9;
+}
