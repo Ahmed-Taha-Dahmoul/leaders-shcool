@@ -2,14 +2,19 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 from django.contrib.auth import get_user_model
-from .models import SchoolClass, Student, Subject, Grade, Trimestre, Arbi
+from .models import SchoolClass, Student, Subject, Grade, Trimestre, Arbi 
 from .forms import TeacherLoginForm
 
 User = get_user_model()
 
 @login_required
 def home_page(request):
-    return render(request, 'home.html')
+    
+    teacher = request.user.teacher  # Assuming you have a OneToOne relationship between User and Teacher
+    context = {
+        'teacher_name': teacher.name
+    }
+    return render(request, 'home.html' , context)
 
 
 def login_view(request):
