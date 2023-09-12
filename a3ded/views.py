@@ -66,6 +66,18 @@ def subjects_view(request, class_id, trimestre_id):
 
     subjects = Subject.objects.filter(school_class=school_class, teachers=teacher)
 
+    # Create a dictionary for subject name translations
+    subject_name_translations = {
+        'arbi': 'العربية',
+        'francai':'français',
+        'anglai' : 'anglais',
+        # Add more mappings as needed
+    }
+
+    # Replace subject names with their Arabic equivalents
+    for subject in subjects:
+        subject.name = subject_name_translations.get(subject.name, subject.name)
+
     context = {
         'subjects': subjects,
         'class_id': class_id,

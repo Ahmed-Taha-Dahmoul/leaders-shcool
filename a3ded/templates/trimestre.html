@@ -7,7 +7,7 @@
     <script src="{% static 'js/script_subjects.js' %}"></script>
 </head>
 <body>
-    <h1>Subjects for Trimestre</h1>
+    <h1>الثلاثيات</h1>
 
     <ul class="classes">
         {% for trimestre in trimestres %}
@@ -19,6 +19,6 @@
         {% endfor %}
     </ul>
 
-    <a href="{% url 'a3ded:home' %}">Back to Home</a>
+    <a href="{% url 'a3ded:home' %}">العودة للصفحة الرئيسية</a>
 </body>
 </html>
