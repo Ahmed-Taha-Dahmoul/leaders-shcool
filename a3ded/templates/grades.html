@@ -19,17 +19,19 @@
             <thead>
                 <tr>
                     <th>Student</th>
-                    <th>Test</th>
+                    
                     {% if subject.name == "arbi" %}
-                        <th>شفاهي</th>
+                        <th>لغة</th>
+                        <th>تواصل شفوي</th>
                         <th>قرائة</th>
                         <th>انتاج</th>
                     {% elif subject.name == "francai" %}
-                        <th>Exp</th>
+                        <th>langue</th>
+                        <th>Exp oral</th>
                         <th>Lecture</th>
                         <th>Production</th>
                     {% elif subject.name == "anglai" %}
-                        
+                        <th>Test</th>
                         {% if class.english == 2 %}
                             <th>Oral</th>
                         {% endif %}
@@ -42,40 +44,40 @@
                     <td>{{ student }}</td>
                     <td>
                         {% with grade=student_grades|get_by_student:student %}
-                            <input type="number" name="test_{{ student.id }}" value="{% if grade %}{{ grade.test }}{% endif %}">
+                            <input type="number" name="test_{{ student.id }}" value="{% if grade %}{{ grade.test }}{% endif %}" step="0.5">
                         {% endwith %}
                     </td>
                     
                     {% if subject.name == "arbi" %}
                         <td>
                             {% with grade=student_grades|get_by_student:student %}
-                                <input type="number" name="chifehi_{{ student.id }}" value="{% if grade and grade.arbi %}{{ grade.arbi.chifehi }}{% endif %}">
+                                <input type="number" name="chifehi_{{ student.id }}" value="{% if grade and grade.arbi %}{{ grade.arbi.chifehi }}{% endif %}"step="0.5">
                             {% endwith %}
                         </td>
                         <td>
                             {% with grade=student_grades|get_by_student:student %}
-                                <input type="number" name="kira2a_{{ student.id }}" value="{% if grade and grade.arbi %}{{ grade.arbi.kira2a }}{% endif %}">
+                                <input type="number" name="kira2a_{{ student.id }}" value="{% if grade and grade.arbi %}{{ grade.arbi.kira2a }}{% endif %}"step="0.5">
                             {% endwith %}
                         </td>
                         <td>
                             {% with grade=student_grades|get_by_student:student %}
-                                <input type="number" name="intej_{{ student.id }}" value="{% if grade and grade.arbi %}{{ grade.arbi.intej }}{% endif %}">
+                                <input type="number" name="intej_{{ student.id }}" value="{% if grade and grade.arbi %}{{ grade.arbi.intej }}{% endif %}"step="0.5">
                             {% endwith %}
                         </td>
                     {% elif subject.name == "francai" %}
                         <td>
                             {% with grade=student_grades|get_by_student:student %}
-                                <input type="number" name="exp_{{ student.id }}" value="{% if grade and grade.francai %}{{ grade.francai.exp }}{% endif %}">
+                                <input type="number" name="exp_{{ student.id }}" value="{% if grade and grade.francai %}{{ grade.francai.exp }}{% endif %}"step="0.5">
                             {% endwith %}
                         </td>
                         <td>
                             {% with grade=student_grades|get_by_student:student %}
-                                <input type="number" name="lecture_{{ student.id }}" value="{% if grade and grade.francai %}{{ grade.francai.lecture }}{% endif %}">
+                                <input type="number" name="lecture_{{ student.id }}" value="{% if grade and grade.francai %}{{ grade.francai.lecture }}{% endif %}"step="0.5">
                             {% endwith %}
                         </td>
                         <td>
                             {% with grade=student_grades|get_by_student:student %}
-                                <input type="number" name="production_{{ student.id }}" value="{% if grade and grade.francai %}{{ grade.francai.production }}{% endif %}">
+                                <input type="number" name="production_{{ student.id }}" value="{% if grade and grade.francai %}{{ grade.francai.production }}{% endif %}"step="0.5">
                             {% endwith %}
                         </td>
                     {% elif subject.name == "anglai" %}
@@ -84,7 +86,7 @@
                         {% if class.english == 2 %}
                             <td>
                                 {% with grade=student_grades|get_by_student:student %}
-                                    <input type="number" name="oral_{{ student.id }}" value="{% if grade and grade.anglai %}{{ grade.anglai.oral }}{% endif %}">
+                                    <input type="number" name="oral_{{ student.id }}" value="{% if grade and grade.anglai %}{{ grade.anglai.oral }}{% endif %}"step="0.5">
                                 {% endwith %}
                             </td>
                             
