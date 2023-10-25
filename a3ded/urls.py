@@ -10,5 +10,6 @@ urlpatterns = [
     path('classes/<int:class_id>/trimestre/', views.trimestre_view, name='trimestre'),  # Updated URL pattern
     path('classes/<int:class_id>/trimestre/<int:trimestre_id>/subjects/', views.subjects_view, name='subjects'),
     path('classes/<int:class_id>/trimestre/<int:trimestre_id>/subjects/<int:subject_id>/grades/', views.grades_view, name='grades'),
+    path('logout/', views.logout_view, name='logout'),
     # Add more URL patterns for other views as needed
 ]

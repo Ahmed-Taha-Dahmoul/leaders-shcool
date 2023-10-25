@@ -40,10 +40,33 @@
             font-size: 18px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            border-radius: 8px;
         }
 
         button:hover {
             background-color: #0056b3;
+        }
+
+        /* Add margin or padding to create space between the buttons */
+        .button-container {
+            margin-top: 20px;
+        }
+
+        /* Style the logout button */
+        .logout-button {
+            background-color: #ff0000; /* Red background color */
+            color: #fff; /* Text color is white */
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            float: left; /* Align the button to the left */
+        }
+
+        .logout-button:hover {
+            background-color: #cc0000; /* Change the background color on hover */
         }
     </style>
 </head>
@@ -54,6 +77,14 @@
     <a href="/a3ded/classes">
         <button>تسجيل الأعداد</button>
     </a>
+
+    <!-- Use a container div for spacing -->
+    <div class="button-container">
+        <form method="post" action="{% url 'a3ded:logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="logout-button">تسجيل الخروج الحساب</button>
+        </form>
+    </div>
 
     <script>
         const buttons = document.querySelectorAll("button");

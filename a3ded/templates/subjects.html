@@ -20,5 +20,11 @@
     </ul>
 
     <a href="{% url 'a3ded:home' %}">العودة للصفحة الرئيسية</a>
+    
+
+    <form method="post" action="{% url 'a3ded:logout' %}">
+      {% csrf_token %}
+      <button type="submit" class="logout-button">تسجيل الخروج الحساب</button>
+  </form>
 </body>
 </html>

@@ -4,6 +4,9 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth import get_user_model
 from .models import SchoolClass, Student, Subject, Grade, Trimestre, Arbi 
 from .forms import TeacherLoginForm
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+from django.urls import reverse
 
 User = get_user_model()
 
@@ -195,7 +198,9 @@ def grades_view(request, class_id, trimestre_id, subject_id):
 
 
 
-
+def logout_view(request):
+    logout(request)  # Logs the user out
+    return redirect(reverse('index'))  # Redirect to the homepage or any other desired page
 
 
 

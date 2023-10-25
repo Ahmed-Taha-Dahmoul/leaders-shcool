@@ -57,3 +57,25 @@ ul.classes li a {
 ul.classes li a:hover {
     background-color: #2980b9;
 }
+
+
+
+
+.logout-button {
+    background-color: #ff0000; /* Customize the background color */
+    color: #fff; /* Customize the text color */
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    /* Adjust the margin as needed */
+}
+
+.logout-button:hover {
+    background-color: #cc0000; /* Change the background color on hover */
+}
